@@ -47,33 +47,29 @@ export const App = () => {
               })}
               key={good}
             >
-              {selectedGood === good ? (
-                <td>
+              <td>
+                {selectedGood === good && (
                   <button
                     data-cy="RemoveButton"
                     type="button"
                     className="button is-info"
-                    onClick={() => {
-                      setValue('');
-                    }}
+                    onClick={() => setValue('')}
                   >
                     -
                   </button>
-                </td>
-              ) : (
-                <td>
+                )}
+
+                {selectedGood === '' && (
                   <button
                     data-cy="AddButton"
                     type="button"
                     className="button"
-                    onClick={() => {
-                      setValue(good);
-                    }}
+                    onClick={() => setValue(good)}
                   >
                     +
                   </button>
-                </td>
-              )}
+                )}
+              </td>
 
               <td data-cy="GoodTitle" className="is-vcentered">
                 {good}
